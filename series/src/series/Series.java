@@ -5,6 +5,7 @@
  */
 package series;
 
+import vista.FramePrincipal;
 import modelo.Acceso;
 import modelo.ListShow;
 import modelo.Show;
@@ -28,12 +29,14 @@ public class Series {
         
         Acceso.guardarLS(ls);
         System.out.println("Guardado");
-*/
+
         ListShow ls=Acceso.cargarLS();
         Show sh=ls.getSerie(0);
         
         System.out.println(sh.getTitulo());
-        System.out.println(ls.getSerie(1).getTitulo());
+        System.out.println(ls.getSerie(1).getTitulo());*/
+        FramePrincipal fp=new FramePrincipal();
+        fp.setVisible(true);
     }
     
 }
