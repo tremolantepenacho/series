@@ -23,4 +23,22 @@ public class Controlador {
         posicion=0;
         return ls.getSerie(posicion);
     }
+    public Show ultimo(){
+        posicion=ls.longitud()-1;
+        return ls.getSerie(posicion);
+    }
+    
+    public Show anterior(){
+        posicion--;
+        return ls.getSerie(posicion);
+    }
+    
+    public Show posterior(){
+        posicion++;
+        return ls.getSerie(posicion);
+    }
+    
+    public void nuevo(Show s){
+        ls.addShow(s);
+    }
 }

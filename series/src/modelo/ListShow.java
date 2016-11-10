@@ -30,4 +30,8 @@ public class ListShow implements Serializable{
     public int longitud(){
         return listaSeries.size();
     }
+    
+    public void addShow(Show s){
+        listaSeries.add(s);
+    }
 }

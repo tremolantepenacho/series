@@ -57,5 +57,27 @@ public class PanelDatos extends JPanel{
         fieldVistas.setText(""+s.getVistas());
         fieldGenero.setText(s.getGenero());
     }
+
+    public String getTitulo() {
+        return fieldTitulo.toString();
+    }
+
+    public String getGuionista() {
+        return fieldGuionista.toString();
+    }
+
+    public String getGenero() {
+        return fieldGenero.toString();
+    }
+
+    public int getTemporadas() {
+        return Integer.parseInt(fieldTemporadas.toString());
+    }
+
+    public int getVistas() {
+        return Integer.parseInt(fieldVistas.toString());
+    }
+    
+    
     
 }

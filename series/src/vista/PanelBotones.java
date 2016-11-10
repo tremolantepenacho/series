@@ -52,11 +52,38 @@ public class PanelBotones extends JPanel{
 class ButtonListener implements ActionListener{
     public void actionPerformed(ActionEvent e){
         Show s=new Show();
-        if (e.getActionCommand().equals("|<")) {
-            s=Series.controlador.primero();
+        switch(e.getActionCommand()){
+            
+            case "|<":
+                s=Series.controlador.primero();
+                break;
+            case ">|":
+                s=Series.controlador.ultimo();
+                break;
+            case "<":
+                s=Series.controlador.anterior();
+                break;
+            case ">":
+                s=Series.controlador.posterior();
+                break;
+            case "+":
+                s=Series.controlador.nuevo(new Show());
+                break;
         }
+        
         pd.actualiza(s);
        
+    }
+    
+    private Show obtenNuevoShow(){
+        Show s=new Show();
+        s.setGenero(pd.getGenero());
+        s.setGuionista(pd.getGuionista());
+        s.setTemporadas(pd.getTemporadas());
+        s.setTitulo(pd.getTitulo());
+        s.setVistas(pd.getVistas());
+        
+        return s;
     }
     
 
