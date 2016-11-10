@@ -2,7 +2,6 @@ package vista;
 
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.HeadlessException;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -28,11 +27,13 @@ public class FramePrincipal extends JFrame{
         panelPrincipal.setLayout(new BorderLayout(10,10));
         add(panelPrincipal);
         
-        JPanel pBotones=new PanelBotones();
+        PanelDatos pDatos=new PanelDatos();
+        panelPrincipal.add(pDatos,BorderLayout.CENTER);
+        
+        PanelBotones pBotones=new PanelBotones(pDatos);
         panelPrincipal.add(pBotones,BorderLayout.NORTH);
         
-        JPanel pDatos=new PanelDatos();
-        panelPrincipal.add(pDatos,BorderLayout.CENTER);
+        
         
         
     }

@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import modelo.Show;
 
 /**
  *
@@ -16,35 +17,45 @@ import javax.swing.JTextField;
  */
 public class PanelDatos extends JPanel{
 
+    private JTextField fieldTitulo,fieldGuionista,fieldGenero,fieldTemporadas,fieldVistas;
+    
     public PanelDatos() {
         super();
         this.setLayout(new GridLayout(5,2,10,10));
         
         JLabel titulo=new JLabel("Título");
-        JTextField fieldTitulo=new JTextField(50);
+        fieldTitulo=new JTextField(50);
         this.add(titulo);
         this.add(fieldTitulo);
         
         JLabel guionista=new JLabel("Guionista");
-        JTextField fieldGuionista=new JTextField(50);
+        fieldGuionista=new JTextField(50);
         this.add(guionista);
         this.add(fieldGuionista);
         
         JLabel genero=new JLabel("Género");
-        JTextField fieldGenero=new JTextField(50);
+        fieldGenero=new JTextField(50);
         this.add(genero);
         this.add(fieldGenero);
         
         JLabel temporadas=new JLabel("Temporadas");
-        JTextField fieldTemporadas=new JTextField(5);
+        fieldTemporadas=new JTextField(5);
         this.add(temporadas);
         this.add(fieldTemporadas);
         
         JLabel vistas=new JLabel("Temporadas vistas");
-        JTextField fieldVistas=new JTextField(5);
+        fieldVistas=new JTextField(5);
         this.add(vistas);
         this.add(fieldVistas);
         
+    }
+    
+    public void actualiza(Show s){
+        fieldTitulo.setText(s.getTitulo());
+        fieldGuionista.setText(s.getGuionista());
+        fieldTemporadas.setText(""+s.getTemporadas());
+        fieldVistas.setText(""+s.getVistas());
+        fieldGenero.setText(s.getGenero());
     }
     
 }
